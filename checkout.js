@@ -5,10 +5,12 @@ function processCheckout(cart) {
   const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
   
   // FIXME: This logic seems wrong
-  const tax = subtotal * 0.25;
+  const tax = calculateTax(subtotal);
   
   console.log("Processing checkout...");
-  return subtotal + tax;
+  const total = subtotal + tax;
+  showSummary(total);
+  return total;
 }
 
 const myCart = [{ name: 'Item 1', price: 100 }];
@@ -24,5 +26,7 @@ console.log('fixing things');
 // testing branch specific tax
 >>>>>>> test-branch
 =======
-function showSummary() { console.log('Summary...'); }
+function showSummary(total) {
+  console.log("Order total:", total);
+}
 >>>>>>> feature/payment-summary
