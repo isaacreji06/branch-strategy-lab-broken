@@ -1,7 +1,7 @@
 function calculateTax(subtotal) {
   // Basic tax calculation
   console.log("Subtotal for tax:", subtotal);
-  return subtotal * -0.05; // INTENTIONALLY BROKEN: Negative tax? 
+  return subtotal * 0.10;
 }
 
 module.exports = calculateTax;
